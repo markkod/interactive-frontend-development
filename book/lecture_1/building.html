@@ -243,15 +243,17 @@ having saner defaults.</p>
 </ul>
 <h3 id="build-scripts">Build scripts</h3>
 <pre><code>yarn build
-</code></pre><p><code>build</code> refers to the <code>build</code> script that is defined in <a href="package.json#L26"><em>package.json</em></a>. This is
-equivalent to running <code>./node_modules/.bin/webpack --config webpack.config.js</code> from the command
-line.</p>
+</code></pre><p><code>build</code> refers to the <code>build</code> script that is defined in
+<a href="https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_1/package.json#L28" target="_blank"><em>package.json</em></a>.
+This is equivalent to running <code>./node_modules/.bin/webpack --config
+webpack.config.js</code> from the command line.</p>
 <h3 id="webpack">Webpack</h3>
 <p>Webpack generates a JavaScript file (<em>public/app.js</em>) using the specified
-configuration file (<a href="webpack.config.js"><em>webpack.config.js</em></a>). Webpack resolves all module imports
-and outputs one file that can be included in the browser using a <code>&lt;script&gt;</code>
-tag. Various plugins can be included in the Webpack build process to perform
-additional changes to the source files.</p>
+configuration file
+(<a href="https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_1/webpack.config.js" target="_blank"><em>webpack.config.js</em></a>).
+Webpack resolves all module imports and outputs one file that can be included
+in the browser using a <code>&lt;script&gt;</code> tag. Various plugins can be included in the
+Webpack build process to perform additional changes to the source files.</p>
 <h4 id="babel">Babel</h4>
 <p>JavaScript is a fast-changing language with many different runtimes (browsers
 and their versions). Babel allows using desired JavaScript features and syntax
@@ -265,21 +267,29 @@ plugins that babel can use to further transform source code.</p>
 files in src/.  Try running <code>yarn build</code> with different browser targets (i.e
 remove &quot;IE 10&quot;) and see how the distribution file changes (search for <code>class</code>).</p>
 <h4 id="building-on-source-file-change">Building on source file change</h4>
-<p><code>yarn build:watch</code> refers to the <code>build:watch</code> script that is defined in <a href="package.json#L27"><em>package.json</em></a>.
-This is equivalent to running <code>./node_modules/.bin/webpack --config webpack.config.js --watch</code>. The
-<code>watch</code> flag instructs Webpack to automatically rebuild the bundle whenever any
-source file changes. New changes are visible after refreshing the web
-application in the browser.</p>
+<p><code>yarn build:watch</code> refers to the <code>build:watch</code> script that is defined in
+<a href="https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_1/package.json#L29" target="_blank"><em>package.json</em></a>.
+This is equivalent to running <code>./node_modules/.bin/webpack --config
+webpack.config.js --watch</code>. The <code>watch</code> flag instructs Webpack to automatically
+rebuild the bundle whenever any source file changes. New changes are visible
+after refreshing the web application in the browser.</p>
 <p><a href="https://webpack.js.org/guides/development/#using-watch-mode" target="_blank">Learn more</a></p>
 <h4 id="refreshing-whenever-source-files-change">Refreshing whenever source files change</h4>
-<p><code>yarn start</code> refers to the <code>start</code> script that is defined in <a href="package.json#L28"><em>package.json</em></a>.
-This is equivalent to running <code>./node_modules/.bin/webpack-dev-server --open --config webpack.config.js</code>. The <code>open</code> flag opens the default browser on the specified port (default 8080) on localhost.</p>
-<p>Try changing <a href="src/index.js">src/index.js</a> and see that the browser pages refreshes automatically once you save your change.</p>
+<p><code>yarn start</code> refers to the <code>start</code> script that is defined in
+<a href="https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_1/package.json#L30" target="_blank"><em>package.json</em></a>.
+This is equivalent to running <code>./node_modules/.bin/webpack-dev-server --open
+--config webpack.config.js</code>. The <code>open</code> flag opens the default browser on the
+specified port (default 8080) on localhost.</p>
+<p>Try changing
+<a href="https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_1/src/index.js" target="_blank">src/index.js</a>
+and see that the browser pages refreshes automatically once you save your
+change.</p>
 <p><a href="https://webpack.js.org/guides/development/#using-webpack-dev-server" target="_blank">Learn more</a></p>
 <h4 id="source-maps">Source Maps</h4>
-<p><a href="webpack.config.js#L13"><em>webpack.config.js</em></a> defines <code>devtool: &quot;inline-source-map&quot;</code> which instructs
-Webpack to add a link to the source code definitions to the end of app.js.
-This link is call a <em>source map</em>.</p>
+<p><a href="https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_1/webpack.config.js#L13" target="_blank"><em>webpack.config.js</em></a>
+defines <code>devtool: &quot;inline-source-map&quot;</code> which instructs Webpack to add a link to
+the source code definitions to the end of app.js.  This link is call a <em>source
+map</em>.</p>
 <p>A <em>source map</em> is a file which maps the transformed source (app.js) to the
 original source (multiple files in src.js). In the current case, a <em>source map</em>
 isn&apos;t an URL to a file, but a base64 encoding of the whole source definition in
@@ -330,7 +340,7 @@ the developer to debug their original, unchanged source code.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Building with NPM, Yarn, Webpack, Babel","level":"1.2.1","depth":2,"next":{"title":"Linting JavaScript source code","level":"1.2.2","depth":2,"path":"lecture_1/linting.md","ref":"./lecture_1/linting.md","articles":[]},"previous":{"title":"Lecture 1 - Introduction to the JavaScript ecosystem","level":"1.2","depth":1,"path":"lecture_1/README.md","ref":"lecture_1/README.md","articles":[{"title":"Building with NPM, Yarn, Webpack, Babel","level":"1.2.1","depth":2,"path":"lecture_1/building.md","ref":"./lecture_1/building.md","articles":[]},{"title":"Linting JavaScript source code","level":"1.2.2","depth":2,"path":"lecture_1/linting.md","ref":"./lecture_1/linting.md","articles":[]},{"title":"CSS and CSS modules","level":"1.2.3","depth":2,"path":"lecture_1/css_modules.md","ref":"./lecture_1/css_modules.md","articles":[]},{"title":"Unit tests","level":"1.2.4","depth":2,"path":"lecture_1/unit_tests.md","ref":"./lecture_1/unit_tests.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"lecture_1/building.md","mtime":"2019-03-09T11:14:27.605Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-09T11:22:20.815Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Building with NPM, Yarn, Webpack, Babel","level":"1.2.1","depth":2,"next":{"title":"Linting JavaScript source code","level":"1.2.2","depth":2,"path":"lecture_1/linting.md","ref":"./lecture_1/linting.md","articles":[]},"previous":{"title":"Lecture 1 - Introduction to the JavaScript ecosystem","level":"1.2","depth":1,"path":"lecture_1/README.md","ref":"lecture_1/README.md","articles":[{"title":"Building with NPM, Yarn, Webpack, Babel","level":"1.2.1","depth":2,"path":"lecture_1/building.md","ref":"./lecture_1/building.md","articles":[]},{"title":"Linting JavaScript source code","level":"1.2.2","depth":2,"path":"lecture_1/linting.md","ref":"./lecture_1/linting.md","articles":[]},{"title":"CSS and CSS modules","level":"1.2.3","depth":2,"path":"lecture_1/css_modules.md","ref":"./lecture_1/css_modules.md","articles":[]},{"title":"Unit tests","level":"1.2.4","depth":2,"path":"lecture_1/unit_tests.md","ref":"./lecture_1/unit_tests.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"lecture_1/building.md","mtime":"2019-03-09T11:33:20.562Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-09T11:33:22.251Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

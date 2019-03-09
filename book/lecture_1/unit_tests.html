@@ -225,30 +225,39 @@ yarn test
 <li>4 passing tests</li>
 </ul>
 <h2 id="explanation">Explanation</h2>
-<p><code>yarn test</code> refers to the <code>test</code> script that is defined in <a href="package.json#L31"><em>package.json</em></a>. This
-is equivalent to running <code>./node_modules/.bin/mocha</code> from the command line.</p>
+<p><code>yarn test</code> refers to the <code>test</code> script that is defined in
+<a href="https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_1/package.json#L33" target="_blank"><em>package.json</em></a>.
+This is equivalent to running <code>./node_modules/.bin/mocha</code> from the command
+line.</p>
 <h3 id="mocha">Mocha</h3>
 <p><a href="https://mochajs.org/" target="_blank">Mocha</a> is a test-runner. It defines how tests are defined (<code>describe</code>,
 <code>beforeEach</code>, <code>it</code>), how they are run and what the output looks like.</p>
-<p><em>mocha</em> is configured in <a href="test/mocha.opts">test/mocha.opts</a>. It specifies the output format and
-instructs all test suites to require test/TestHelper JS file.</p>
-<p><a href="test/TestHelper.js"><em>TestHelper.js</em></a> is used to perform setup that is needed for all tests.</p>
+<p><em>mocha</em> is configured in
+<a href="https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_1/test/mocha.opts" target="_blank">test/mocha.opts</a>.
+It specifies the output format and instructs all test suites to require
+test/TestHelper JS file.</p>
+<p><a href="https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_1/test/TestHelper.js" target="_blank"><em>TestHelper.js</em></a>
+is used to perform setup that is needed for all tests.</p>
 <p>It uses <em>babel</em> to transform source files into ES5 that can be interpreted by
 NodeJS. NodeJS does not support ES6 modules and we don&apos;t want to change our
 source files to be able to run tests from the command line. Thus a different
 babel configuration is used to both resolve modules and to transpile source
 code for a desired NodeJS version. </p>
 <h3 id="chai">Chai</h3>
-<p><a href="http://chaijs.com/" target="_blank">Chai</a> is an assertion library that allows testing for properties of objects or
-functions. <em>expect</em> style assertions are made available thorugh a global
-<code>expect</code> function in <a href="test/TestHelper.js"><em>TestHelper.js</em></a>.</p>
+<p><a href="http://chaijs.com/" target="_blank">Chai</a> is an assertion library that allows testing for properties of objects
+or functions. <em>expect</em> style assertions are made available thorugh a global
+<code>expect</code> function in
+<a href="https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_1/test/TestHelper.js" target="_blank"><em>TestHelper.js</em></a>.</p>
 <h3 id="tests">Tests</h3>
-<p>Check out <a href="test/PureFunctionsTest.js">test/PureFunctionsTests.js</a> for example tests. It also demonstrates
-how <code>beforeEach</code> can be use to extract common setup code.</p>
+<p>Check out
+<a href="https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_1/test/PureFunctionsTest.js" target="_blank">test/PureFunctionsTests.js</a>
+for example tests. It also demonstrates how <code>beforeEach</code> can be use to extract
+  common setup code.</p>
 <h3 id="continuous-testing">Continuous testing</h3>
 <p>Mocha can be run in <code>watch</code> mode to run tests any time files change. This can
 be useful to get feedback faster. The <code>test:watch</code> script is defined in
-<a href="package.json">package.json</a> for convenience.</p>
+<a href="https://github.com/urmastalimaa/interactive-frontend-development/tree/master/lecture_1/package.json" target="_blank">package.json</a>
+for convenience.</p>
 <h3 id="transform-object-rest-spread-plugin">transform-object-rest-spread plugin</h3>
 <p>ES6 defines spread syntax for arrays <code>[...myArray, newElem]</code>, but does not do
 so for objects. Object.assign can be used to create a new object with an
@@ -295,7 +304,7 @@ newValue}</code> syntax.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Unit tests","level":"1.2.4","depth":2,"previous":{"title":"CSS and CSS modules","level":"1.2.3","depth":2,"path":"lecture_1/css_modules.md","ref":"./lecture_1/css_modules.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"lecture_1/unit_tests.md","mtime":"2019-03-09T11:14:27.612Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-09T11:22:20.815Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Unit tests","level":"1.2.4","depth":2,"previous":{"title":"CSS and CSS modules","level":"1.2.3","depth":2,"path":"lecture_1/css_modules.md","ref":"./lecture_1/css_modules.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"lecture_1/unit_tests.md","mtime":"2019-03-09T11:33:20.563Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-09T11:33:22.251Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
