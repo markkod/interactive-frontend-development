@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Lecture 1 - Introduction to the JavaScript ecosystem · GitBook</title>
+        <title>Lecture 2 - Introduction to React · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="building.html" />
+    <link rel="next" href="src/props_example/" />
     
     
-    <link rel="prev" href="../" />
+    <link rel="prev" href="../lecture_1/unit_tests.html" />
     
 
     </head>
@@ -102,9 +102,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="./">
+        <li class="chapter " data-level="1.2" data-path="../lecture_1/">
             
-                <a href="./">
+                <a href="../lecture_1/">
             
                     
                     Lecture 1 - Introduction to the JavaScript ecosystem
@@ -116,9 +116,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="building.html">
+        <li class="chapter " data-level="1.2.1" data-path="../lecture_1/building.html">
             
-                <a href="building.html">
+                <a href="../lecture_1/building.html">
             
                     
                     Building with NPM, Yarn, Webpack, Babel
@@ -129,9 +129,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="linting.html">
+        <li class="chapter " data-level="1.2.2" data-path="../lecture_1/linting.html">
             
-                <a href="linting.html">
+                <a href="../lecture_1/linting.html">
             
                     
                     Linting JavaScript source code
@@ -142,9 +142,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3" data-path="css_modules.html">
+        <li class="chapter " data-level="1.2.3" data-path="../lecture_1/css_modules.html">
             
-                <a href="css_modules.html">
+                <a href="../lecture_1/css_modules.html">
             
                     
                     CSS and CSS modules
@@ -155,9 +155,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4" data-path="unit_tests.html">
+        <li class="chapter " data-level="1.2.4" data-path="../lecture_1/unit_tests.html">
             
-                <a href="unit_tests.html">
+                <a href="../lecture_1/unit_tests.html">
             
                     
                     Unit tests
@@ -173,9 +173,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="../lecture_2/">
+        <li class="chapter active" data-level="1.3" data-path="./">
             
-                <a href="../lecture_2/">
+                <a href="./">
             
                     
                     Lecture 2 - Introduction to React
@@ -187,9 +187,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="../lecture_2/src/props_example/">
+        <li class="chapter " data-level="1.3.1" data-path="src/props_example/">
             
-                <a href="../lecture_2/src/props_example/">
+                <a href="src/props_example/">
             
                     
                     React introduction
@@ -200,9 +200,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="../lecture_2/src/state_example/">
+        <li class="chapter " data-level="1.3.2" data-path="src/state_example/">
             
-                <a href="../lecture_2/src/state_example/">
+                <a href="src/state_example/">
             
                     
                     State in React
@@ -213,9 +213,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.3" data-path="../lecture_2/src/pure_function_example/">
+        <li class="chapter " data-level="1.3.3" data-path="src/pure_function_example/">
             
-                <a href="../lecture_2/src/pure_function_example/">
+                <a href="src/pure_function_example/">
             
                     
                     Pure function components
@@ -226,9 +226,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.4" data-path="../lecture_2/src/user_input_example/">
+        <li class="chapter " data-level="1.3.4" data-path="src/user_input_example/">
             
-                <a href="../lecture_2/src/user_input_example/">
+                <a href="src/user_input_example/">
             
                     
                     User input
@@ -274,7 +274,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Lecture 1 - Introduction to the JavaScript ecosystem</a>
+        <a href=".." >Lecture 2 - Introduction to React</a>
     </h1>
 </div>
 
@@ -289,43 +289,35 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="lecture-1">Lecture 1</h1>
-<p>Lecture 1 gives an overview of JavaScript tools and ecosystem. It also
-describes the standard way to build a modern JavaScript <em>browser application</em>.</p>
+                                <h1 id="lecture-2">Lecture 2</h1>
+<p>Lecture 2 gives an overview of React, a library for writing declarative UI components.</p>
 <h2 id="study-goals">Study goals</h2>
-<p>There are a lot of concepts and tools described in lecture 1. This is to get a
-flying start to be able to implement an interesting application with 7
-homeworks.</p>
-<p>It is not necessary to understand all lecture 1 concepts in depth immediately.
-If something creates confusion later, lecture 1 can be revisited.</p>
-<h2 id="building">Building</h2>
+<h2 id="react-introduction">React introduction</h2>
 <ul>
-<li>Where and using what can JavaScript libraries be downloaded? How can they be used in your application?</li>
-<li>When are JavaScript files loaded and executed?</li>
-<li>How to package different JavaScript files into one application?</li>
-<li>What is ECMAScript, ES2015, ES5 etc? Where and how can it be used?</li>
-<li>What is transpilation? How does it differ from compilation?</li>
-<li>What are source maps?</li>
+<li>What dependencies does React have?</li>
+<li>How does React integrate with other tools (babel/eslint)?</li>
+<li>How do React component compose?</li>
 </ul>
-<p><a href="building.html">Building with NPM, Yarn, Webpack, Babel</a></p>
-<h2 id="linting">Linting</h2>
+<p><a href="src/props_example/">Introduction to React</a></p>
+<h2 id="state-in-react">State in React</h2>
 <ul>
-<li>What automated tools are there to ensure JavaScript quality?</li>
+<li>What are <em>props</em> and <em>state</em> in React?</li>
+<li>What is React component lifecycle (basic level), when is render called?</li>
 </ul>
-<p><a href="linting.html">Linting JavaScript source code</a></p>
-<h2 id="css">CSS</h2>
+<p><a href="src/state_example/">State in React</a></p>
+<h2 id="pure-function-components">Pure function components</h2>
 <ul>
-<li>What is CSS?</li>
-<li>How can CSS be partitioned to modules?</li>
-<li>How to align and order elements using flexbox</li>
+<li>What are class components and pure function components, when to use which?</li>
+<li>How to type-check <em>props</em>?</li>
 </ul>
-<p><a href="css_modules.html">CSS and CSS modules</a></p>
-<h2 id="testing">Testing</h2>
+<p><a href="src/pure_function_example/">Pure function components in React</a></p>
+<h2 id="user-input">User input</h2>
 <ul>
-<li>How to test your application?</li>
-<li>How to create new JavaScript objects and arrays without mutating existing ones</li>
+<li>How to specify event handlers on native HTML elements?</li>
+<li>What are callback functions, how to pass them from parent to children?</li>
+<li>What is function context? How to bind a function to a context?</li>
 </ul>
-<p><a href="unit_tests.html">Unit tests</a></p>
+<p><a href="src/user_input_example/">User input in React</a></p>
 
                                 
                                 </section>
@@ -353,12 +345,12 @@ If something creates confusion later, lecture 1 can be revisited.</p>
 
             
                 
-                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="../lecture_1/unit_tests.html" class="navigation navigation-prev " aria-label="Previous page: Unit tests">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="building.html" class="navigation navigation-next " aria-label="Next page: Building with NPM, Yarn, Webpack, Babel">
+                <a href="src/props_example/" class="navigation navigation-next " aria-label="Next page: React introduction">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -369,7 +361,7 @@ If something creates confusion later, lecture 1 can be revisited.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Lecture 1 - Introduction to the JavaScript ecosystem","level":"1.2","depth":1,"next":{"title":"Building with NPM, Yarn, Webpack, Babel","level":"1.2.1","depth":2,"path":"lecture_1/building.md","ref":"./lecture_1/building.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"lecture_1/README.md","mtime":"2019-03-09T11:14:27.605Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-09T12:09:25.305Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Lecture 2 - Introduction to React","level":"1.3","depth":1,"next":{"title":"React introduction","level":"1.3.1","depth":2,"path":"lecture_2/src/props_example/README.md","ref":"./lecture_2/src/props_example/README.md","articles":[]},"previous":{"title":"Unit tests","level":"1.2.4","depth":2,"path":"lecture_1/unit_tests.md","ref":"./lecture_1/unit_tests.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"lecture_2/README.md","mtime":"2019-03-09T12:09:23.717Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-09T12:09:25.305Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
