@@ -26,7 +26,10 @@ module.exports = {
                 targets: "last 5 Chrome versions, last 5 Firefox versions, IE 10"
               }]
             ],
-            plugins: ['@babel/plugin-proposal-object-rest-spread']
+            plugins: [
+              '@babel/plugin-proposal-object-rest-spread',
+              '@babel/plugin-proposal-class-properties'
+            ]
           }
         }
       },

@@ -1,12 +1,16 @@
-import Robot from './Robot';
-import {associate} from './PureFunctions';
+import Metronome from './Metronome';
 import '../css/index.css';
 
-const robot = new Robot();
-robot.beep();
+const metronome = new Metronome(0);
 
-document.body.innerHTML = '<h1>Title added from JavaScript</h1>';
+document.body.innerHTML = '<h1>The Human Metronome Project</h1>';
+const button = document.createElement('Button');
+button.innerHTML = 'Start metronome';
+button.onclick = function() {
+  button.innerHTML = metronome.createTimeDiff() + '; ' + metronome.getCount();
+};
+// const text = document.createTextNode(metronome.createTimeDiff() + '; ' + metronome.getCount());
 
-console.log(associate('fooz', 'baz', {foo: 'bar'})); // eslint-disable-line no-console
+document.body.appendChild(button);
 
-window.robot = robot;
+// window.robot = robot;
