@@ -1,5 +1,5 @@
 import Metronome from '../src/Metronome';
-import {require, expect} from '../test/TestHelper';
+import {expect} from '../test/TestHelper';
 import {describe} from 'mocha';
 
 // https://codeburst.io/javascript-unit-testing-using-mocha-and-chai-1d97d9f18e71
