@@ -19,12 +19,6 @@
     "max-len": ["error", 120],
     "require-jsdoc": "off",
     "comma-dangle": "off",
-    "mocha/no-exclusive-tests": "error",
-    "no-unused-vars": [
-      "error",
-      {
-        "varsIgnorePattern": "should"
-      }
-    ]
+    "mocha/no-exclusive-tests": "error"
   }
 }

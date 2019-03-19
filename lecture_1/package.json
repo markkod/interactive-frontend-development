@@ -6,6 +6,9 @@
   "author": "Urmas Talimaa",
   "license": "MIT",
   "private": true,
+  "browserslist": [
+    " >= 3%"
+  ],
   "devDependencies": {
     "@babel/core": "^7.3.4",
     "@babel/plugin-proposal-class-properties": "^7.3.4",
@@ -30,8 +33,7 @@
     "build": "webpack --config webpack.config.js",
     "build:watch": "webpack --config webpack.config.js --watch",
     "start": "webpack-dev-server --open --config webpack.config.js",
-    "lint": "eslint src/",
-    "prestart": "eslint --ignore-pattern LintFail.js src/",
+    "lint": "eslint src/ && eslint test/",
     "test": "mocha",
     "test:watch": "mocha --watch"
   },
