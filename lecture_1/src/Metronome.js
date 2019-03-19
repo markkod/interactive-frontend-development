@@ -1,7 +1,5 @@
 class Metronome {
-  state = {
-    counter: 0
-  };
+  counter = 0;
 
   createTimeDiff() {
     const d = new Date();
@@ -9,8 +7,8 @@ class Metronome {
   }
 
   getCount() {
-    this.state.counter += 1;
-    return this.state.counter;
+    this.counter += 1;
+    return this.counter;
   }
 }
 
