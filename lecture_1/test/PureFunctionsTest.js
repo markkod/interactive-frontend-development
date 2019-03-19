@@ -1,4 +1,4 @@
-import {merge, associate} from '../src/PureFunctions';
+
 
 describe('merge', () => {
   it('has properties from both object', () => {
