@@ -1,0 +1,15 @@
+body {
+  background-color: #ccc7c7;
+  text-align: center;
+  margin: 50px;
+}
+
+button {
+  display: inline-flex;
+  background-color: #e7e7e7;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+}
