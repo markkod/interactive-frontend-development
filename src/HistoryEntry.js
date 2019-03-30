@@ -2,11 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const HistoryEntry = (props) => {
+    function determineTextColour(timeDiff) {
+        if (timeDiff > 200) {
+            return 'red';
+        } else if (timeDiff < 100) {
+            return 'green';
+        } else {
+            return 'orange';
+        }
+    }
+    
     return (
         <div className="history-entry">
-            <h3 className="entry-count">
+            <p className="entry-count" style={{color: determineTextColour(props.timeDiff)}}>
                 TRY {props.count}: MISSED BY {props.timeDiff} MILLISECONDS
-            </h3>
+            </p>
             {props.children}
         </div>
     );

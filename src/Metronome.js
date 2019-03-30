@@ -10,17 +10,20 @@ class Metronome extends Component {
         };
     }
 
-    getTimeDiff() {
+    createTimeDiff() {
         const milliseconds = new Date().getMilliseconds();
         if (milliseconds >= 500) {
             return 1000 - milliseconds;
         }
         return milliseconds;
+        
+        // unsure how I should increment the count here as per last feedback,
+        // so I got the count working somewhere else (probably a bad practice)
     }
 
     
     handleOnClick() {
-        this.setState({count: this.state.count, timeDiff: this.getTimeDiff()}, () => {
+        this.setState({count: this.state.count, timeDiff: this.createTimeDiff()}, () => {
             this.props.onSubmit({count: this.state.count, timeDiff: this.state.timeDiff});
         });
     }
@@ -28,9 +31,14 @@ class Metronome extends Component {
 
     render() {
         return (
-            <button onClick={this.handleOnClick.bind(this)}>
-                NOW
-            </button>
+            <div>
+                <p>
+                
+                </p>
+                <button onClick={this.handleOnClick.bind(this)}>
+                    NOW
+                </button>
+            </div>
         );
     }
 }
