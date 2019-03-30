@@ -9,9 +9,11 @@ const History = (props) => {
             <HistoryEntry count={attempt.count} timeDiff={attempt.timeDiff} key={attempt.id}/>
         );
     });
+    
+    const historyEntriesCopy = historyEntries.slice().reverse();
     return (
         <div className="history-entries">
-            {historyEntries.reverse()}
+            {historyEntriesCopy}
         </div>
     );
 };
