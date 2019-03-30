@@ -10,20 +10,26 @@ class Game extends Component {
             attempts: []
         };
     }
-    handleButtonClick({number, timeDiff}) {
+    
+    handleButtonClick({count, timeDiff}) {
         const lastAttempt = this.state.attempts[this.state.attempts.length - 1];
+        let lastId = 0;
+        let lastCount = 0;
+        if (lastAttempt !== undefined) {
+            lastId = lastAttempt.id;
+            lastCount = lastAttempt.count;
+        }
         this.setState({
-            attempts: this.state.attempts.concat({number, timeDiff, id: lastAttempt.id + 1})
+            attempts: this.state.attempts.concat({count: lastCount + 1, timeDiff: timeDiff, id: lastId + 1})
         });
     }
-
+    
     render() {
         return (
             <div>
                 Hi {this.props.name}, try to click the button exactly every 1000 milliseconds!
-                <Metronome />
-                <History />
-
+                <Metronome onSubmit={this.handleButtonClick.bind(this)}/>
+                <History attempts={this.state.attempts}/>
             </div>
         );
     }

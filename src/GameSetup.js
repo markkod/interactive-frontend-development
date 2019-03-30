@@ -1,42 +1,51 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import Game from '../src/Game';
 
 class GameSetup extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: ''
+            name: '',
+            displayGame: false
         };
-        this.onSubmit = this.onSubmit.bind(this);
+        this.onClick = this.onClick.bind(this);
     }
     
     handleNameChange(event) {
         this.setState({name: event.target.value});
     }
     
-    onSubmit() {
-        this.props.onSubmit({name: this.state.name});
+    onClick() {
+        this.setState({name: this.state.name, displayGame: true});
     }
     
     render() {
-        return (
-            <div className='name-form'>
-                <input
-                    type='text'
-                    placeholder='Enter your name'
-                    value={this.state.name}
-                    onChange={this.handleNameChange.bind(this)}
-                />
-                <button className='name-form' onClick={this.onSubmit}>
-                    START
-                </button>
-            </div>
-        );
+        if (this.state.displayGame) {
+            return <Game name={this.state.name} />;
+        } else {
+            return (
+                <div className='name-form'>
+                    {
+                        this.state.displayGame && <Game name={this.state.name}/>
+                    }
+                    <input
+                        type='text'
+                        placeholder='Enter your name'
+                        value={this.state.name}
+                        onChange={this.handleNameChange.bind(this)}
+                    />
+                    <button className='name-form' onClick={this.onClick}>
+                        START
+                    </button>
+                </div>
+            );
+        }
     }
 }
 
 GameSetup.propTypes = {
-    onSubmit: PropTypes.func.isRequired,
+    onSubmit: PropTypes.func,
 };
 
 

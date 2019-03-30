@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import HistoryEntry from './HistoryEntry.js';
 
 class Metronome extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            counter: 0,
+            count: 0,
             timeDiff: 0
         };
     }
@@ -19,17 +18,17 @@ class Metronome extends Component {
         return milliseconds;
     }
 
-    displayAttempt() {
-        this.setState({counter: this.counter + 1, timeDiff: this.getTimeDiff()});
-        return (
-            <HistoryEntry count={this.counter} timeDiff={this.timeDiff} />
-        );
+    
+    handleOnClick() {
+        this.setState({count: this.state.count, timeDiff: this.getTimeDiff()}, () => {
+            this.props.onSubmit({count: this.state.count, timeDiff: this.state.timeDiff});
+        });
     }
 
 
     render() {
         return (
-            <button onClick={this.displayAttempt}>
+            <button onClick={this.handleOnClick.bind(this)}>
                 NOW
             </button>
         );
@@ -37,8 +36,9 @@ class Metronome extends Component {
 }
 
 Metronome.propTypes = {
-    counter: PropTypes.number.isRequired,
-    timeDiff: PropTypes.number.isRequired
+    count: PropTypes.number,
+    timeDiff: PropTypes.number,
+    onSubmit: PropTypes.func.isRequired
 };
 
 export default Metronome;

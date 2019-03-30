@@ -11,16 +11,16 @@ const History = (props) => {
     });
     return (
         <div className="history-entries">
-            {historyEntries}
+            {historyEntries.reverse()}
         </div>
     );
 };
 
 History.propTypes = {
     attempts: PropTypes.arrayOf(PropTypes.shape({
-        count: PropTypes.number,
-        timeDiff: PropTypes.number,
-        id: PropTypes.number
+        count: PropTypes.number.isRequired,
+        timeDiff: PropTypes.number.isRequired,
+        id: PropTypes.number.isRequired
     })).isRequired
 };
 

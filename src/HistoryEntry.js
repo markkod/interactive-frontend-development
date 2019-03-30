@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 const HistoryEntry = (props) => {
     return (
         <div className="history-entry">
-            <h2 className="entry-count">
-                Try {props.count}: missed by {props.timeDiff} milliseconds
-            </h2>
+            <h3 className="entry-count">
+                TRY {props.count}: MISSED BY {props.timeDiff} MILLISECONDS
+            </h3>
             {props.children}
         </div>
     );
