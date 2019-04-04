@@ -10,6 +10,7 @@ class App extends React.Component {
     this.onHit = this.onHit.bind(this);
     this.state = {
       hits: [],
+      totalMiss: 0,
       started: false
     };
   }
@@ -18,7 +19,8 @@ class App extends React.Component {
     this.setState({
       name: name,
       started: true,
-      startMilliseconds: Date.now()
+      startMilliseconds: Date.now(),
+      totalMiss: 0,
     });
   }
 
@@ -31,7 +33,8 @@ class App extends React.Component {
       miss = millis;
     }
     this.setState({
-      hits: this.state.hits.concat([{miss: miss}])
+      hits: this.state.hits.concat([{miss: miss}]),
+      totalMiss: this.state.totalMiss + miss
     });
   }
 
@@ -41,7 +44,8 @@ class App extends React.Component {
     } else {
       return (
         <div className="metronomeGame">
-          <div>Hi {this.state.name}, try to click the button exactly every 1000 milliseconds</div>
+          <div>Hi {this.state.name}, lets play Human Metronome</div>
+          <div>Your total miss thus far is {this.state.totalMiss} ms</div>
           <button className="metronomeButton" onClick={this.onHit}>NOW</button>
           <MetronomeHitHistory hits={this.state.hits} frequency={1000} />
         </div>
