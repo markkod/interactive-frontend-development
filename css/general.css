@@ -34,10 +34,3 @@ input[type=text] {
     outline: none;
     border: 1px solid #DDDDDD;
 }
-
-input[type=text], textarea:focus {
-    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
-    padding: 12px 32px;
-    margin: 5px 1px 3px 0px;
-    border: 1px solid rgba(81, 203, 238, 1);
-}

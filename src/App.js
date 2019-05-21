@@ -2,6 +2,7 @@ import React from 'react';
 import MetronomeHitHistory from './MetronomeHitHistory';
 import SetupForm from './SetupForm';
 import '../css/index.css';
+import PropTypes from 'prop-types';
 
 class App extends React.Component {
   constructor(props) {
@@ -13,6 +14,7 @@ class App extends React.Component {
       totalMiss: 0,
       started: false
     };
+    this.setupForm = React.createRef();
   }
 
   onStart({name, frequency}) {
@@ -40,7 +42,7 @@ class App extends React.Component {
 
   render() {
     if (!this.state.started) {
-      return <SetupForm onStart={this.onStart}/>;
+      return <SetupForm ref={this.setupForm} onStart={this.onStart}/>;
     } else {
       return (
         <div className="metronomeGame">
@@ -53,5 +55,14 @@ class App extends React.Component {
     }
   }
 }
+
+App.propTypes = {
+  focusForms: PropTypes.bool.isRequired
+};
+
+App.defaultProps = {
+  focusForms: true
+};
+
 
 export default App;
