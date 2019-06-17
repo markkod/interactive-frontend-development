@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import MetronomeHit from './MetronomeHit';
+import {reverse} from './PureFunctions';
 
 const MetronomeHitHistory = ({hits, frequency}) => {
-  const hitList = hits.slice().reverse().map((hit, index) =>
+  const hitList = reverse(hits).map((hit, index) =>
     <MetronomeHit
-      key={index}
-      index={hits.length - index}
+      key={hits.length - 1 - index}
+      index={hits.length - 1 - index}
       missInMilliseconds={hit.miss}
       missInFractions={hit.miss / frequency}
     />

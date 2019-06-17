@@ -1,7 +1,37 @@
 body {
-    background-color: #ccc7c7;
-    text-align: center;
     margin: 50px;
+}
+
+#root {
+    width: 100%;
+}
+
+.loginForm {
+    text-align: center;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.instructions {
+    text-align: center;
+    margin: 10px;
+}
+
+.newGameForm {
+    text-align: center;
+    margin: 10px;
+}
+
+.games {
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .bad-hit {
@@ -16,21 +46,24 @@ body {
     color: orange;
 }
 
-button {
-    display: inline-flex;
-    flex-direction: column;
-    background-color: #e7e7e7;
-    color: black;
-    padding: 12px 32px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 12px;
+.loginForm {
+    margin: 50px;
 }
 
-input[type=text] {
-    display: inline-flex;
+.metronomeButton {
+    display: block;
+    width: 200px;
+    height: 30px;
+    margin: 5px;
+}
+
+.metronomeButton.close {
+    width: 100px;
+    color: gray;
+}
+
+.metronomeGame {
+    display: flex;
+    align-items: center;
     flex-direction: column;
-    padding: 12px 32px;
-    outline: none;
-    border: 1px solid #DDDDDD;
 }

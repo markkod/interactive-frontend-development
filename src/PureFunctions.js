@@ -12,3 +12,17 @@ export const concat = (arr1, arr2) =>
 
 export const append = (elem, arr) =>
   [...arr, elem];
+
+export const reverse = (arr) =>
+  arr.slice().reverse();
+
+export const adjust = (index, fn, arr) => {
+  const newArray = arr.slice();
+  newArray[index] = fn(newArray[index]);
+  return newArray;
+};
+
+export const adjustBy = (selectFn, adjustFn, arr) => {
+  const index = arr.findIndex((obj) => selectFn(obj));
+  return adjust(index, adjustFn, arr);
+};

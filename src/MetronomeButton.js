@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const MetronomeButton = ({onHit}) => {
-  return <button onClick={onHit}>NOW</button>;
+  return <button className="metronomeButton" onClick={onHit}>NOW</button>;
 };
 
 MetronomeButton.propTypes = {

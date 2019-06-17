@@ -1,68 +1,113 @@
 import React from 'react';
-import MetronomeHitHistory from './MetronomeHitHistory';
-import SetupForm from './SetupForm';
+import MetronomeGame from './MetronomeGame';
+import LoginForm from './LoginForm';
+import NewGameForm from './NewGameForm';
+import Instructions from './Instructions';
 import '../css/index.css';
-import PropTypes from 'prop-types';
+import {adjustBy} from './PureFunctions';
+
+const calculateMiss = (startMilliseconds, nowMilliseconds, frequency) => {
+  const remainder = (nowMilliseconds - startMilliseconds) % frequency;
+  if (remainder >= frequency / 2) {
+    return frequency - remainder;
+  } else {
+    return remainder;
+  }
+};
+
+const recordHit = (game, millisNow) =>
+  ({...game,
+    hits: game.hits.concat([{
+      miss: calculateMiss(game.startMilliseconds, millisNow, game.frequency)
+    }])
+  });
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.onStart = this.onStart.bind(this);
-    this.onHit = this.onHit.bind(this);
+    this.addGame = this.addGame.bind(this);
     this.state = {
-      hits: [],
-      totalMiss: 0,
-      started: false
+      loggedIn: false,
+      games: []
     };
-    this.setupForm = React.createRef();
+    this.login = this.login.bind(this);
+    this.recordHit = this.recordHit.bind(this);
+    this.closeGame = this.closeGame.bind(this);
+    this.addGame = this.addGame.bind(this);
+    this.loginForm = React.createRef();
   }
 
-  onStart({name, frequency}) {
+  addGame({frequency}) {
     this.setState({
-      name: name,
-      started: true,
-      startMilliseconds: Date.now(),
-      totalMiss: 0,
+      games: this.state.games.concat({
+        id: this.state.games.length,
+        hits: [],
+        open: true,
+        frequency: frequency,
+        startMilliseconds: Date.now()
+      })
     });
   }
 
-  onHit() {
-    const millis = (new Date()).getMilliseconds();
-    let miss;
-    if (millis >= 500) {
-      miss = 1000 - millis;
-    } else {
-      miss = millis;
-    }
-    this.setState({
-      hits: this.state.hits.concat([{miss: miss}]),
-      totalMiss: this.state.totalMiss + miss
-    });
+  closeGame({gameId}) {
+    const newGames = adjustBy(
+      (game) => game.id === gameId,
+      (game) => ({...game, open: false}),
+      this.state.games
+    );
+    this.setState({games: newGames});
+  }
+
+  login({name}) {
+    this.setState({name: name, loggedIn: true});
+  }
+
+  recordHit({gameId}) {
+    const millisNow = Date.now();
+    const newGames = adjustBy(
+      (game) => game.id === gameId,
+      (game) => recordHit(game, millisNow),
+      this.state.games,
+    );
+    this.setState({games: newGames});
+  }
+
+  componentDidMount() {
+    this.loginForm.current.focus();
   }
 
   render() {
-    if (!this.state.started) {
-      return <SetupForm ref={this.setupForm} onStart={this.onStart}/>;
+    if (!this.state.loggedIn) {
+      return <LoginForm ref={this.loginForm} onEnter={this.login}/>;
     } else {
+      const games = this.state.games
+        .filter((game) => game.open)
+        .map((game, index) =>
+          <MetronomeGame
+            key={index}
+            frequencyMs={game.frequency}
+            hits={game.hits}
+            onHit={() => this.recordHit({gameId: game.id})}
+            onClose={() => this.closeGame({gameId: game.id})}
+          />
+        );
+
+      const totalMiss = this.state.games.reduce(
+        (acc, game) => acc + game.hits.reduce((hitAcc, hit) => hitAcc + hit.miss, 0),
+        0
+      );
+
       return (
-        <div className="metronomeGame">
-          <div>Hi {this.state.name}, lets play Human Metronome</div>
-          <div>Your total miss thus far is {this.state.totalMiss} ms</div>
-          <button className="metronomeButton" onClick={this.onHit}>NOW</button>
-          <MetronomeHitHistory hits={this.state.hits} frequency={1000} />
+        <div className="app">
+          <Instructions name={this.state.name} totalMiss={totalMiss} />
+          <NewGameForm onStart={this.addGame} />
+          <div className="games">
+            {games}
+          </div>
         </div>
       );
     }
   }
 }
-
-App.propTypes = {
-  focusForms: PropTypes.bool.isRequired
-};
-
-App.defaultProps = {
-  focusForms: true
-};
-
 
 export default App;
